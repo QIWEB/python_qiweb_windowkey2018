@@ -33,7 +33,9 @@ Flask-RESTful==0.3.6
 update 20180914 15:42
 update 20181025 10:10
 '''
-
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 # class UntitledTestCase(unittest.TestCase):
 class UntitledTestCase():
 
