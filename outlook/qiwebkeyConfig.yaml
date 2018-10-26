@@ -1,0 +1,25 @@
+# qeweb yaml 配置说明
+#在产品后面配置数量 合计为10
+#win10冒号+空格+数量
+nb1:
+    user: admin
+    psw: 123456
+    zz: 这个地方之前必须有个空格
+qiweb:
+    #mac是一个_一样的提一次就ok
+    Office_Home_and_Business_2016_for_Mac:           1
+    #（1次_这是绑定邮箱）索取密钥_5_剩余  不是 Office Professional Plus 2016 (Discontinued)
+    Office_Professional_Plus_2016: 1
+    #索取密钥_5_剩余__可以激活五次
+    #Office Professional Plus 2016 (Discontinued)
+    Office_Professional_Plus_2016_(Discontinued): 3
+    #2013是一个_一样的提一次就ok索取密钥_5_剩余每个密钥_可以激活5次  不是Office Professional Plus 2013 with Service Pack 1
+    Office_Professional_Plus_2013: 2
+    #索取密钥_5_剩余_每个密钥_可以激活5次
+    Office_Professional_Plus_2010:  2
+    #专业版_索取密钥_1_剩余___可20活_20次 不是 Windows 10 Pro N and KN
+    Windows_10_Pro: 1
+    #专业版_零售_索取密钥_5_剩余___可_五次 是Windows_10_Pro 但是剩余是5个的，不是Windows 10 Pro N and KN
+    Windows_10_Pro_Retail:
+    #企业版索取密钥_1_剩余____可20活_20次  不是 Windows 10 Enterprise N and KN
+    Windows_10_Enterprise:
