@@ -133,6 +133,56 @@ class UntitledTestCase():
     # 保存账号的记事本
     qiwebkeyConfig = 'qiwebkeyConfig.yaml'
 
+    arr1=[]
+    #js脚本模板
+    jstemp1='''
+        //正则表达式 后面g表示匹配多行 返回数组
+        var pattern = /[A-Z0-9]{5}-{1}[A-Z0-9]{5}-{1}[A-Z0-9]{5}-{1}[A-Z0-9]{5}-{1}[A-Z0-9]{5}/g;
+        //这个数组是没有发送请求之前网页源代码中的所有html和文本
+        var str=$("body").text();
+        var attr1=str.match(pattern);
+        return arr1;
+        '''
+    jstemp2='''
+        //用jquery 模拟 点击一个连接后请求服务器，返回了一个激活码串 展示在界面上
+        //$('a[aria-label="索取密钥 for Office 2007 Applications"]')[5].click();
+        //$("#qiwebdiv").html("发送请求后服务器返回了这个内容：C64GF-QGX43-2PMM3-KFGKM-Q6600");
+        //在每个 div 元素结尾插入内容
+        $("div").append(" <b>Hello world!发送请求后服务器返回了这个内容：C64GF-QGX43-2PMM3-KFGKM-Q6600</b>")
+     '''
+    jstemp3 = '''
+        //去除数组重复元素
+        function uniqueqiweb(arr){
+          var hash=[];
+          for (var i = 0; i < arr.length; i++) {
+            for (var j = i+1; j < arr.length; j++) {
+              if(arr[i]===arr[j]){
+                ++i;
+              }
+            }
+              hash.push(arr[i]);
+          }
+          return hash;
+        }
+        //正则表达式 后面g表示匹配多行 返回数组
+        var pattern = /[A-Z0-9]{5}-{1}[A-Z0-9]{5}-{1}[A-Z0-9]{5}-{1}[A-Z0-9]{5}-{1}[A-Z0-9]{5}/g;
+        //再获取一遍网页上的全部内容，用正则提取我们需要的激活码
+        var str=$("body").text();
+        var attr2=str.match(pattern);
+        var arr1=%s;
+        //这个数组是从更新后的数组中比较之前页面上的信息，返回页面请求后新增的内容数组
+        arr3=arr2.filter(key => !arr1.includes(key))
+         
+        //但是arr3 包含重复的元素 这里再去重处理
+         
+        var arr5=uniqueqiweb(arr3);
+        //这个内容返回给python 
+        return arr5;
+    '''%arr1 #[12,34,5]这个数组后续改成脚本1的返回值
+    #调用js
+    #'''$('a[aria-label="索取密钥 for Office 2007 Applications"]')[5].click();$('#downloadSearchBox').val("9999"); return "ffaa";'''
+    #print browser.execute_script(js)
+
     #togheetxrlmi@outlook.com----vEpjC7KbqeXz
     email='togheetxrlmi@outlook.com'
     password='vEpjC7KbqeXz'
