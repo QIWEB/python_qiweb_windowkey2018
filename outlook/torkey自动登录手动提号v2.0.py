@@ -31,7 +31,10 @@ Flask-RESTful==0.3.6
 
  PyYAML==3.13
 update 20180914 15:42
-update 20181025 10:10
+update 20181025 10:10 
+update 20181029 13:00
+
+技术交流 v信：908701702
 '''
 import sys
 reload(sys)
